@@ -1,0 +1,22 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "Customer",
+            "CustomerCategory",
+            "Order"
+        ],
+        "stores": [
+            "Customers",
+            "Orders",
+            "CustomerCategories"
+        ],
+        "name": "MyApp"
+    },
+    "designerId": "application"
+}

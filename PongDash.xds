@@ -21,7 +21,11 @@
         "view": [],
         "store": [],
         "controller": [],
-        "model": [],
+        "model": [
+            "a60ec56f-825f-42ae-a714-4879a6271dee",
+            "141bb31c-21fa-4115-be93-a458d79c74d0",
+            "701b4f72-9ecf-49ef-b8a1-065664eb42bd"
+        ],
         "resource": [
             "3a69f5ed-50b8-4a7c-98ad-9421d87f6929",
             "ccb52165-81a8-4a4b-9fc0-e5b4c5726540"

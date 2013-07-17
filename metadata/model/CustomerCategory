@@ -1,0 +1,65 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CustomerCategory"
+    },
+    "designerId": "141bb31c-21fa-4115-be93-a458d79c74d0",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "category"
+            },
+            "designerId": "41eb7181-32f9-4fea-885f-61b589dea2c6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "count",
+                "type": "int"
+            },
+            "designerId": "8ed8dbd3-3407-4708-9bd1-d2ca53d06f47"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "currentQtrTotal",
+                "type": "float"
+            },
+            "designerId": "bcaf3114-02e2-4c79-80cc-54a76a5cb991"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "priorQtrTotal",
+                "type": "float"
+            },
+            "designerId": "6b5bd5ff-9349-4cc7-9157-792521b3862f"
+        }
+    ]
+}

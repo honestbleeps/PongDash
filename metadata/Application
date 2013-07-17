@@ -6,6 +6,11 @@
     },
     "codeClass": null,
     "userConfig": {
+        "models": [
+            "Customer",
+            "CustomerCategory",
+            "Order"
+        ],
         "name": "MyApp"
     },
     "designerId": "application"

@@ -26,7 +26,8 @@ Ext.application({
         'Order'
     ],
     views: [
-        'CustomerDetail'
+        'CustomerDetail',
+        'ContactInfo'
     ],
     name: 'MyApp'
 });

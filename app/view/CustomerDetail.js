@@ -17,6 +17,10 @@ Ext.define('MyApp.view.CustomerDetail', {
     extend: 'Ext.panel.Panel',
     alias: 'widget.customerdetail',
 
+    requires: [
+        'MyApp.view.ContactInfo'
+    ],
+
     padding: 10,
     layout: {
         align: 'stretch',
@@ -37,7 +41,16 @@ Ext.define('MyApp.view.CustomerDetail', {
                         align: 'stretch',
                         type: 'hbox'
                     },
-                    title: ''
+                    title: '',
+                    items: [
+                        {
+                            xtype: 'contactinfo',
+                            flex: 1,
+                            border: 1,
+                            margin: '0 20 0 0',
+                            padding: 10
+                        }
+                    ]
                 },
                 {
                     xtype: 'container',
@@ -53,11 +66,58 @@ Ext.define('MyApp.view.CustomerDetail', {
                             text: 'New Order'
                         }
                     ]
+                },
+                {
+                    xtype: 'gridpanel',
+                    flex: 1,
+                    itemId: 'ordersGrid',
+                    title: '',
+                    disableSelection: true,
+                    store: 'Orders',
+                    columns: [
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'id',
+                            text: 'Id'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'orderNo',
+                            text: 'Orders',
+                            flex: 1
+                        },
+                        {
+                            xtype: 'datecolumn',
+                            dataIndex: 'orderDate',
+                            text: 'OrderDate'
+                        },
+                        {
+                            xtype: 'datecolumn',
+                            dataIndex: 'shippedDate',
+                            text: 'ShippedDate'
+                        },
+                        {
+                            xtype: 'numbercolumn',
+                            dataIndex: 'total',
+                            text: 'Total'
+                        },
+                        {
+                            xtype: 'numbercolumn',
+                            dataIndex: 'balance',
+                            text: 'Balance'
+                        }
+                    ]
                 }
             ]
         });
 
         me.callParent(arguments);
+    },
+
+    setCustomer: function(customer) {
+        this.setTitle(customer.get('name'));
+        this.down('contactinfo').update(customer.getData());
+        this.customer = customer;
     }
 
 });

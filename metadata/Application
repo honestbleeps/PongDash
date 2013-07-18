@@ -11,10 +11,17 @@
             "CustomerCategory",
             "Order"
         ],
+        "stores": [
+            "Customers",
+            "Orders",
+            "CustomerCategories"
+        ],
         "views": [
             "CustomerDetail",
-            "ContactInfo"
+            "ContactInfo",
+            "Main"
         ],
+        "autoCreateViewport": true,
         "name": "MyApp"
     },
     "designerId": "application"

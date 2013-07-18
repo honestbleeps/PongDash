@@ -26,9 +26,9 @@ Ext.define('MyApp.store.Customers', {
         me.callParent([Ext.apply({
             autoLoad: true,
             model: 'MyApp.model.Customer',
-            storeId: 'MyJsonStore',
+            storeId: 'Customers',
             proxy: {
-                type: 'ajax',
+                type: 'jsonp',
                 url: 'http://localhost:8080/customers',
                 reader: {
                     type: 'json'

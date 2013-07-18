@@ -25,15 +25,16 @@ Ext.application({
         'CustomerCategory',
         'Order'
     ],
+    stores: [
+        'Customers',
+        'Orders',
+        'CustomerCategories'
+    ],
     views: [
         'CustomerDetail',
         'ContactInfo',
-        'Main',
-        'BreadCrumbs'
+        'Main'
     ],
     autoCreateViewport: true,
-    controllers: [
-        'MyController'
-    ],
     name: 'MyApp'
 });

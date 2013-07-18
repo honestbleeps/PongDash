@@ -27,10 +27,7 @@ Ext.application({
     ],
     views: [
         'CustomerDetail',
-        'ContactInfo',
-        'Main',
-        'BreadCrumbs'
+        'ContactInfo'
     ],
-    autoCreateViewport: true,
     name: 'MyApp'
 });

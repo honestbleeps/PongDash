@@ -30,7 +30,39 @@
                 "itemId": "cardCt",
                 "layout": "card"
             },
-            "designerId": "eb06c818-683e-452a-a500-817923754420"
+            "designerId": "eb06c818-683e-452a-a500-817923754420",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|ui-data": [
+                            "{\"33823947-0df9-4edc-91ae-0d8390a8e8c0\":\"default\"}"
+                        ]
+                    },
+                    "designerId": "6d373757-8047-486f-aa7d-aa5e7482df54",
+                    "masterInstanceId": "c4f99e29-b81e-4c08-827e-eaac4021da90"
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|ui-data": [
+                            "{\"33823947-0df9-4edc-91ae-0d8390a8e8c0\":\"default\"}"
+                        ]
+                    },
+                    "designerId": "6e5efe0c-a0db-4cdf-a43e-cf313bfebc78",
+                    "masterInstanceId": "417ad6f7-f546-43ac-816e-ba3a734680ba"
+                }
+            ]
         },
         {
             "type": "basicfunction",
@@ -65,10 +97,10 @@
             },
             "codeClass": null,
             "userConfig": {
-                "layout|flex": null,
                 "designer|ui-data": [
                     "{\"33823947-0df9-4edc-91ae-0d8390a8e8c0\":\"default\"}"
-                ]
+                ],
+                "layout|flex": null
             },
             "designerId": "e556c05f-efa4-401d-bf10-a1b87eba238a",
             "masterInstanceId": "41caa789-2f5f-41b6-8cf5-41d425d64ed7"

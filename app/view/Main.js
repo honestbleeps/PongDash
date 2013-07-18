@@ -18,9 +18,9 @@ Ext.define('MyApp.view.Main', {
     alias: 'widget.main',
 
     requires: [
+        'MyApp.view.BreadCrumbs',
         'MyApp.view.Customers',
-        'MyApp.view.CustomerDetail',
-        'MyApp.view.BreadCrumbs'
+        'MyApp.view.CustomerDetail'
     ],
 
     padding: '20 10 10',
@@ -35,6 +35,9 @@ Ext.define('MyApp.view.Main', {
 
         Ext.applyIf(me, {
             items: [
+                {
+                    xtype: 'breadcrumbs'
+                },
                 {
                     xtype: 'container',
                     flex: 1,
@@ -52,9 +55,6 @@ Ext.define('MyApp.view.Main', {
                             xtype: 'customerdetail'
                         }
                     ]
-                },
-                {
-                    xtype: 'breadcrumbs'
                 }
             ]
         });
@@ -62,7 +62,7 @@ Ext.define('MyApp.view.Main', {
         me.callParent(arguments);
     },
 
-    updateBreadCrumbs: function() {
+    updateBreadcrumbs: function() {
         var cmp = this.child('#cardCt').getLayout().getActiveItem(),
             titles = [];
         while (cmp) {

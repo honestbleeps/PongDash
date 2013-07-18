@@ -1,0 +1,80 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "container|padding": 10,
+        "height": null,
+        "padding": 10,
+        "width": null,
+        "designer|userClassName": "CustomerDetail",
+        "designer|userAlias": "customerdetail",
+        "designer|ui-data": [
+            "{\"33823947-0df9-4edc-91ae-0d8390a8e8c0\":\"default\"}"
+        ],
+        "layout": "vbox",
+        "title": "{name}"
+    },
+    "designerId": "417ad6f7-f546-43ac-816e-ba3a734680ba",
+    "cn": [
+        {
+            "type": "Ext.panel.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "container|align": "stretch",
+                "height": 173,
+                "designer|displayName": "topPanel",
+                "designer|ui-data": [
+                    "{\"33823947-0df9-4edc-91ae-0d8390a8e8c0\":\"default\"}"
+                ],
+                "layout": "hbox",
+                "title": ""
+            },
+            "designerId": "3c4b3b68-6d6b-4bec-8a2b-dbafffca250a"
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "layout|margins": "10 0",
+                "container|align": "stretch",
+                "designer|displayName": "button-container",
+                "layout": "hbox"
+            },
+            "designerId": "d9449ad2-01b9-461b-9b27-35481c4855f8",
+            "cn": [
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|ui-data": [
+                            "{\"33823947-0df9-4edc-91ae-0d8390a8e8c0\":\"default\"}"
+                        ],
+                        "iconCls": "icon-add",
+                        "text": "New Order"
+                    },
+                    "designerId": "7eec2ca6-67fb-45ab-a013-522763db80cf"
+                }
+            ]
+        }
+    ]
+}

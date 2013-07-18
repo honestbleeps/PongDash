@@ -25,14 +25,8 @@ Ext.application({
         'CustomerCategory',
         'Order'
     ],
-    stores: [
-        'Customers',
-        'Orders',
-        'CustomerCategories'
-    ],
     views: [
-        'Customers'
+        'CustomerDetail'
     ],
-    autoCreateViewport: true,
     name: 'MyApp'
 });

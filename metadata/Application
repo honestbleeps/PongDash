@@ -11,6 +11,9 @@
             "CustomerCategory",
             "Order"
         ],
+        "views": [
+            "CustomerDetail"
+        ],
         "name": "MyApp"
     },
     "designerId": "application"

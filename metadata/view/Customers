@@ -111,7 +111,7 @@
                                     "        var quarter = item.yField === 'priorQtrTotal' ? 'Previous Quarter' : 'Current Quarter';",
                                     "        this.update(quarter + ': ' + Ext.util.Format.currency(record.get(item.yField)));",
                                     "    }",
-                                    ""
+                                    "}"
                                 ],
                                 "title": [
                                     "Previous Quarter",

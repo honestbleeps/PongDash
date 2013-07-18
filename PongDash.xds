@@ -18,7 +18,9 @@
     "upgradeVersion": 210000000503,
     "framework": "ext42",
     "viewOrderMap": {
-        "view": [],
+        "view": [
+            "c4f99e29-b81e-4c08-827e-eaac4021da90"
+        ],
         "store": [
             "4e2e87bf-ee90-485b-a151-a5b1e7fce703",
             "2cf858d6-bd6a-4851-ba4a-715de48afe7d",
@@ -32,7 +34,7 @@
         ],
         "resource": [
             "3a69f5ed-50b8-4a7c-98ad-9421d87f6929",
-            "ccb52165-81a8-4a4b-9fc0-e5b4c5726540"
+            "33823947-0df9-4edc-91ae-0d8390a8e8c0"
         ],
         "app": [
             "application"

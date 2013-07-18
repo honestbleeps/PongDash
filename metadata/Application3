@@ -16,6 +16,10 @@
             "Orders",
             "CustomerCategories"
         ],
+        "views": [
+            "Customers"
+        ],
+        "autoCreateViewport": true,
         "name": "MyApp"
     },
     "designerId": "application"

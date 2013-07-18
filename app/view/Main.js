@@ -18,6 +18,8 @@ Ext.define('MyApp.view.Main', {
     alias: 'widget.main',
 
     requires: [
+        'MyApp.view.Customers',
+        'MyApp.view.CustomerDetail',
         'MyApp.view.BreadCrumbs'
     ],
 
@@ -41,7 +43,15 @@ Ext.define('MyApp.view.Main', {
                     itemId: 'cardCt',
                     layout: {
                         type: 'card'
-                    }
+                    },
+                    items: [
+                        {
+                            xtype: 'customers'
+                        },
+                        {
+                            xtype: 'customerdetail'
+                        }
+                    ]
                 },
                 {
                     xtype: 'breadcrumbs'

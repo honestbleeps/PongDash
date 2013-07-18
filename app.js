@@ -25,10 +25,5 @@ Ext.application({
         'CustomerCategory',
         'Order'
     ],
-    stores: [
-        'Customers',
-        'Orders',
-        'CustomerCategories'
-    ],
     name: 'MyApp'
 });

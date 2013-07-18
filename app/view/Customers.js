@@ -77,7 +77,13 @@ Ext.define('MyApp.view.Customers', {
                                         attributes.fill = colors[index];
                                         return attributes;
                                     },
-                                    tips: '{\n    trackMouse: true,\n    renderer: function(record, item) {\n        var quarter = item.yField === \'priorQtrTotal\' ? \'Previous Quarter\' : \'Current Quarter\';\n        this.update(quarter + \': \' + Ext.util.Format.currency(record.get(item.yField)));\n    }',
+                                    tips: {
+                                        trackMouse: true,
+                                        renderer: function(record, item) {
+                                            var quarter = item.yField === 'priorQtrTotal' ? 'Previous Quarter' : 'Current Quarter';
+                                            this.update(quarter + ': ' + Ext.util.Format.currency(record.get(item.yField)));
+                                        }
+                                    },
                                     title: [
                                         'Previous Quarter',
                                         'Current Quarter'

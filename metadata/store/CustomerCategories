@@ -14,7 +14,7 @@
     "designerId": "47e1a4e0-0dd1-4ba8-83df-a03c4249b809",
     "cn": [
         {
-            "type": "Ext.data.proxy.Ajax",
+            "type": "Ext.data.proxy.JsonP",
             "reference": {
                 "name": "proxy",
                 "type": "object"

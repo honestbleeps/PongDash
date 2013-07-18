@@ -28,7 +28,7 @@ Ext.define('MyApp.store.Customers', {
             model: 'MyApp.model.Customer',
             storeId: 'MyJsonStore',
             proxy: {
-                type: 'ajax',
+                type: 'jsonp',
                 url: 'http://localhost:8080/customers',
                 reader: {
                     type: 'json'

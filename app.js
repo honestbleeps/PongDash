@@ -32,5 +32,8 @@ Ext.application({
         'BreadCrumbs'
     ],
     autoCreateViewport: true,
+    controllers: [
+        'MyController'
+    ],
     name: 'MyApp'
 });

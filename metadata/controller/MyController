@@ -1,0 +1,137 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyController"
+    },
+    "designerId": "f2849bbf-a0ad-43ab-81db-9b49b8be2b60",
+    "cn": [
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "customers",
+                "selector": "main > #cards"
+            },
+            "designerId": "ffe5cfd4-9176-407e-8c84-7a439241a7d8"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "customerDetail",
+                "selector": "customerdetail"
+            },
+            "designerId": "a39f5aa3-a19b-486b-a080-b8e0e21b47dc"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "main",
+                "selector": "main"
+            },
+            "designerId": "c7b40d80-d405-48d0-8436-e23056545b4e"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "cardCt",
+                "selector": "#cardCt"
+            },
+            "designerId": "e1af7dee-acc2-4388-8c9c-e47b55dfc5c7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onBreadcrumbsBreadcrumbactivate",
+                "implHandler": [
+                    "this.getCardCt().getLayout().setActiveItem(index);"
+                ],
+                "name": "breadcrumbactivate",
+                "scope": "me",
+                "designer|targetType": "BreadCrumbs",
+                "designer|controlQuery": "breadcrumbs"
+            },
+            "designerId": "6d27b417-a1cb-42ed-825c-4a3245ecd7c5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCustomerSelect",
+                "designer|params": [
+                    "customer",
+                    "eventOptions"
+                ],
+                "implHandler": [
+                    "var detailCard = this.getCustomerDetail();",
+                    "detailCard.setCustomer(customer);",
+                    "detailCard.ownerCt.getLayout().setActiveItem(detailCard);",
+                    "",
+                    "var args = {",
+                    "    params: {",
+                    "        customerId: customer.getId()",
+                    "    }",
+                    "};",
+                    "this.getOrdersStore().load(args);",
+                    ""
+                ],
+                "name": "customerselect",
+                "scope": "me",
+                "designer|targetType": "Customers",
+                "designer|controlQuery": "customers"
+            },
+            "designerId": "c852882e-bde5-443d-8aa8-7d925200f5ca"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCardSwitch",
+                "implHandler": [
+                    "this.getMain().updateBreadcrumbs();"
+                ],
+                "name": "activate",
+                "scope": "me",
+                "designer|targetType": "Ext.Component",
+                "designer|controlQuery": "main > #cardCt > component"
+            },
+            "designerId": "8ded5174-678e-450d-938f-8e53a9f5539c"
+        }
+    ]
+}

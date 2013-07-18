@@ -18,6 +18,9 @@
             "BreadCrumbs"
         ],
         "autoCreateViewport": true,
+        "controllers": [
+            "MyController"
+        ],
         "name": "MyApp"
     },
     "designerId": "application"

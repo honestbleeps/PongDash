@@ -16,7 +16,6 @@
         "designer|ui-data": [
             "{\"ccb52165-81a8-4a4b-9fc0-e5b4c5726540\":\"default\",\"33823947-0df9-4edc-91ae-0d8390a8e8c0\":\"default\"}"
         ],
-        "designer|initialView": true,
         "layout": "vbox",
         "title": "Customers"
     },

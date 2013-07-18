@@ -45,10 +45,10 @@ Ext.define('MyApp.view.CustomerDetail', {
                     items: [
                         {
                             xtype: 'contactinfo',
-                            flex: 1,
                             border: 1,
                             margin: '0 20 0 0',
-                            padding: 10
+                            padding: 10,
+                            flex: 1
                         }
                     ]
                 },

@@ -19,9 +19,11 @@
     "framework": "ext42",
     "viewOrderMap": {
         "view": [
+            "d58fa269-ec34-4e1f-b30a-8a93f391a045",
             "c4f99e29-b81e-4c08-827e-eaac4021da90",
             "417ad6f7-f546-43ac-816e-ba3a734680ba",
-            "7038561f-4f1d-4c85-8fa7-ca0cfea77c49"
+            "7038561f-4f1d-4c85-8fa7-ca0cfea77c49",
+            "41caa789-2f5f-41b6-8cf5-41d425d64ed7"
         ],
         "store": [
             "4e2e87bf-ee90-485b-a151-a5b1e7fce703",
@@ -36,7 +38,8 @@
         ],
         "resource": [
             "3a69f5ed-50b8-4a7c-98ad-9421d87f6929",
-            "33823947-0df9-4edc-91ae-0d8390a8e8c0"
+            "33823947-0df9-4edc-91ae-0d8390a8e8c0",
+            "7f2c2a4f-33bb-4e18-8673-660247d9bf6f"
         ],
         "app": [
             "application"

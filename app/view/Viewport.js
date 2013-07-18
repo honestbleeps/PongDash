@@ -14,6 +14,6 @@
  */
 
 Ext.define('MyApp.view.Viewport', {
-    extend: 'MyApp.view.Customers',
+    extend: 'MyApp.view.Main',
     renderTo: Ext.getBody()
 });

@@ -36,5 +36,8 @@ Ext.application({
         'Main'
     ],
     autoCreateViewport: true,
+    controllers: [
+        'MyController'
+    ],
     name: 'MyApp'
 });

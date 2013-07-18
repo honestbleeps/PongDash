@@ -6,6 +6,14 @@
     },
     "codeClass": null,
     "userConfig": {
+        "stores": [
+            "Customers",
+            "CustomerCategories",
+            "Orders"
+        ],
+        "views": [
+            "Main"
+        ],
         "designer|userClassName": "MyController"
     },
     "designerId": "f2849bbf-a0ad-43ab-81db-9b49b8be2b60",
@@ -70,7 +78,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onBreadcrumbsBreadcrumbactivate",
+                "fn": "onBreadcrumbsActivate",
                 "implHandler": [
                     "this.getCardCt().getLayout().setActiveItem(index);"
                 ],

@@ -17,6 +17,22 @@
     "designerId": "d58fa269-ec34-4e1f-b30a-8a93f391a045",
     "cn": [
         {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|ui-data": [
+                    "{\"33823947-0df9-4edc-91ae-0d8390a8e8c0\":\"default\"}"
+                ],
+                "layout|flex": null
+            },
+            "designerId": "e556c05f-efa4-401d-bf10-a1b87eba238a",
+            "masterInstanceId": "41caa789-2f5f-41b6-8cf5-41d425d64ed7"
+        },
+        {
             "type": "Ext.container.Container",
             "reference": {
                 "name": "items",
@@ -72,7 +88,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "updateBreadCrumbs",
+                "fn": "updateBreadcrumbs",
                 "implHandler": [
                     "var cmp = this.child('#cardCt').getLayout().getActiveItem(),",
                     "    titles = [];",
@@ -88,22 +104,6 @@
                 ]
             },
             "designerId": "e8e7435b-27aa-4f2f-a6cd-26969a7d45e8"
-        },
-        {
-            "type": "linkedinstance",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|ui-data": [
-                    "{\"33823947-0df9-4edc-91ae-0d8390a8e8c0\":\"default\"}"
-                ],
-                "layout|flex": null
-            },
-            "designerId": "e556c05f-efa4-401d-bf10-a1b87eba238a",
-            "masterInstanceId": "41caa789-2f5f-41b6-8cf5-41d425d64ed7"
         }
     ]
 }

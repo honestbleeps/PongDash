@@ -16,6 +16,15 @@
 Ext.define('MyApp.controller.MyController', {
     extend: 'Ext.app.Controller',
 
+    stores: [
+        'Customers',
+        'CustomerCategories',
+        'Orders'
+    ],
+    views: [
+        'Main'
+    ],
+
     refs: [
         {
             ref: 'customers',
@@ -35,7 +44,7 @@ Ext.define('MyApp.controller.MyController', {
         }
     ],
 
-    onBreadcrumbsBreadcrumbactivate: function(breadcrumbs, index, eventOptions) {
+    onBreadcrumbsActivate: function(breadcrumbs, index, eventOptions) {
         this.getCardCt().getLayout().setActiveItem(index);
     },
 
@@ -60,7 +69,7 @@ Ext.define('MyApp.controller.MyController', {
     init: function(application) {
         this.control({
             "breadcrumbs": {
-                breadcrumbactivate: this.onBreadcrumbsBreadcrumbactivate
+                breadcrumbactivate: this.onBreadcrumbsActivate
             },
             "customers": {
                 customerselect: this.onCustomerSelect

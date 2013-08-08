@@ -1,0 +1,369 @@
+Getting started:
+
+- Open Architect
+
+- Click "Create New"
+
+- Choose "ExtJS 4.2" framework
+
+- Open a blank project.
+
+- Save as PongCon
+
+- open Finder or Explorer and add a "resources" to the root of your saved PongCon project
+
+- Extract the contents of the attached "resources.zip" file in to the "resources" folder
+
+- Install the "Breadcrumbs" component attached to this post via "Edit" -> "Import Component" - we'll use this later.
+
+
+The backend:
+
+You won't need to worry about the backend or creating test data, we've set up a backend
+service and put it online at http://senchapingpongstore.com/
+
+
+Creating the models:
+
+Add a model and update the following configs:
+    userClassName: "Customer"
+    idProperty: "customerId"
+
+    add the following fields: 
+        customerId, name, address, city, state , zip, phone, fax, category, balance
+
+    select the "balance" field and set type: "float"
+
+
+Add another model and update the following configs:
+    userClassName: "CustomerCategory"
+
+    add the following fields: 
+        category, count, currentQtrTotal, priorQtrTotal
+
+    change the fields' "type" configs as follows:
+        count -> type: "int"
+        currentQtrTotal -> type: "float"
+        priorQtrTotal -> type: "float"
+
+
+Add one last model and update the following configs:
+    userClassName: "Order"
+    idProperty: "orderId"
+    add the following fields: 
+        id, orderNo, orderDate, shippedDate, balance, subTotal, shipping, tax, total
+
+    change the fields' "type" configs as follows:
+        balance -> type: "float"
+        subTotal -> type: "float"
+        shipping -> type: "float"
+        tax -> type: "float"
+        total -> type: "float"
+
+
+Creating the stores:
+
+Add a JSONP store and update the following configs:
+    userClassName: "Customers"
+    storeId: "Customers"
+    model: "Customer"
+    autoLoad: true
+
+    Select the proxy under this store and set the url config:
+        url: "http://senchapingpongstore.com/customers"
+
+Add another JSONP store and update the following configs:
+    userClassName: "Orders"
+    storeId: "Orders"
+    model: "Order"
+    autoLoad: true
+
+    Select the proxy under this store and set the url config:
+        url: "http://senchapingpongstore.com/orders"
+
+
+Add one last JSONP store and update the following configs:
+    userClassName: "CustomerCategories"
+    storeId: "CustomerCategories"
+    model: "CustomerCategory"
+    autoLoad: true
+
+    Select the proxy under this store and set the url config:
+        url: "http://senchapingpongstore.com/categories"
+
+
+
+Creating and setting up the views:
+
+Add a Panel as a top level instance, and set the following configs:
+title: "Customers"
+userAlias: "customers"
+userClassName: "Customers"
+layout: "vbox"
+padding: 10
+clear the values of height and width
+
+
+    Add a Container as a child of the "Customers" panel, and set the following configs:
+        height: 210
+        layout: "hbox"
+        clear the flex config
+
+    Add a grid panel as a child element of the "Customers" panel as well (not to the container we just added)
+
+
+Let's take a quick break and make this prettier to look at:
+
+- add neptune theme from the toolbox -- doesn't that look better!
+- remove classic theme by right clicking it in the library and deleting it -- out w/ the old in with the new!
+
+    Add a Column chart to the "Container" added above and set the following configs:
+        flex: 1
+        animate: true
+        displayName: "Qtr vs Qtr"
+        store: “CustomerCategories”
+
+        edit the category axis and set the following configs:
+            fields: [‘category’]
+            dashSize: 0
+            clear the title config
+
+        edit the numeric axis and set the following configs:
+            fields: [‘currentQtrTotal’, ‘priorQtrTotal’]
+            clear the title config
+            label:
+                {
+                    renderer: Ext.util.Format.currency
+                }
+
+        edit the column series and set the following configs:
+            xField: "category"
+            yField: ['priorQtrTotal', 'currentQtrTotal']
+            title: ['Previous Quarter','Current Quarter']
+            groupGutter: 0
+            gutter: 20
+
+            clear the label config -- we’re going to use tips instead
+            tips: 
+                {
+                    trackMouse: true,
+                    renderer: function(record, item) {
+                        var quarter = item.yField === 'priorQtrTotal' ? 'Previous Quarter' : 'Current Quarter';
+                        this.update(quarter + ': ' + Ext.util.Format.currency(record.get(item.yField)));
+                    }
+                }
+
+        add a renderer to the Column Chart, and use the following code:
+            var colors = ['#3299cc', '#9bcde7', '#4db8ed', '#a6dcf6', '#8ebf2b', '#c6e192', '#1e7069', '#8eb8b4'];
+            attributes.fill = colors[index];
+            return attributes;
+
+
+    add an Image ("img" in the Toolbox) to the "Container" added above and set the following configs:
+        clear the flexconfig
+        width: 200
+        src: "resources/images/pingpong.gif"
+
+
+    Select the Grid Panel we added earlier, and update the following configs:
+        clear the title config
+        displayName: "Grid"
+        disableSelection: true
+        flex: 1
+        store: "Customers"
+        Now that we've selected a store, right click the Grid Panel in the inspector and choose "Auto Columns", the store will be used to automatically generate the necessary columns for the Grid Panel.
+
+        Add an event binding to the Grid Panel
+            set name to "itemclick"
+            double click the "itemclick" event binding and set the code to:
+                this.fireEvent('customerselect', record);
+
+
+
+
+Now we'll add a new top level panel, the Customer Detail panel, and set the following configs:
+    userAlias: "customerdetail"
+    userClassName: "CustomerDetail"
+    title: "{name}"
+    layout: "vbox"
+    padding: 10
+    clear the height config
+    clear the width config
+
+    Add a child panel to the CustomerDetail panel we just added, and set the following configs:
+        displayName: "topPanel"
+        layout: "hbox"
+        height: 173
+        clear the title config
+        clear the flex config
+
+    Add a Container as a child of the CustomerDetail panel, and set the following configs:
+    displayName: "button-container"
+    margins: "10 0"
+    layout: "hbox"
+    clear the flex config
+    
+        Add a Button to the Container we just created, and set the following configs:
+        text: "New Order"
+        iconCls: "icon-add"
+        clear the flex config
+
+
+Now we'll add another new top level item, a Component, and set the following configs:
+    userAlias: "contactinfo"
+    userClassName: "ContactInfo"
+    cls: "contactInfo"
+    tpl: 
+        <div class="name">{name}</div>
+        <div class="address">{address}<br>{city}, {state} {zip}</div>
+        <div class="phone">Phone: {phone}</div>
+        <div class="phone">Fax: {fax}</div>
+
+
+
+In the inspector, drag and link the Component we just created to topPanel (in customerdetail panel)
+    On the linked instance, set the following configs:
+        padding: 10
+        margin: "0 20 0 0"
+        border: 1
+
+
+Next, we'll select the CustomerDetail panel again, and add a basic function as follows:
+    fn: setCustomer
+    params: customer
+    set the code to:
+        this.setTitle(customer.get('name'));
+        this.down('contactinfo').update(customer.getData());
+        this.customer = customer;
+
+    Now, add a Grid Panel as a child of our CustomerDetail panel, setting these configs:
+        clear the title config
+        itemId: "ordersGrid"
+        disableSelection: true
+        store: "Orders"
+
+        Right click the grid panel in the inspector and choose Auto Columns, then modify columns as follows:
+            orderNo: 
+                text: "Orders"
+                flex: 1
+            Right click the "orderDate" column, and transform it to a Date Column
+            Right click the "shippedDate" column, and transform it to a Date Column
+            
+        Delete the following columns, we won't need them:
+            subtotal
+            shipping
+            tax
+
+        In the inspector, click and drag the "Balance" column to the end of the list, which moves it to the far right of the grid panel.
+
+
+Next we'll create our Main viewport -- add a Viewport as a new top level component, setting these configs:
+    userClassName: "Main"
+    userAlias: "main"
+    layout: "vbox"
+    padding: "20 10 10"
+
+Right click the viewport we just added, and choose "Mark as Initial View"
+
+You may want to collapse all of the view trees in the inspector at this point, and drag this view to the top for organization's sake.
+
+    Add a Container to the Main viewport, updating the following configs:
+        layout: "card"
+        itemId: "cardCt"
+        flex: 1
+        margins: "10 0 0"
+        frame: true
+
+    In the inspector, drag the "Customers" view to this container and choose "link" when prompted
+    In the inspector, drag the "CustomerDetail" view to this container and choose "link" when prompted
+
+Select our Main viewport again in the inspector, and add a function
+    name: "updateBreadcrumbs"
+    leave "parameters" blank, we won't need any.
+
+    Edit the function's code, and set it to:
+        var cmp = this.child('#cardCt').getLayout().getActiveItem(),
+            titles = [];
+        while (cmp) {
+            titles.unshift(cmp.title);
+            cmp = cmp.previousSibling();
+        }
+
+        //one-off: first item is always "Home"
+        titles[0] = "Home";
+
+        this.child('breadcrumbs').update(titles);
+
+
+
+Locate the "Breadcrumbs" component we installed earlier in the toolbox and drag it to our "Main" viewport
+    clear the flex config
+
+select the top level instance of breadcrumbs and set the config for userClassName as follows:
+    userClassName: Breadcrumbs  (it may have a capital C by default, be sure to check!)
+
+
+STYLE
+
+Earlier, you unzipped some CSS and images to the "resources" folder of your project. Let's use that CSS now.
+
+Select the "customers" view so that you can see the changes once we add the CSS.
+add a css resource with a URL config of "resources/css/style.css"
+
+
+
+
+Finally, we need to add our controllers:
+
+add a new controller with the following configs:
+    userClassName: MainController
+
+    add all stores to the stores array  - click "Keep" on each when prompted
+
+    add 4 controller references:
+        name: customers
+        selector: main > #cards
+
+        name: customerDetail
+        selector: customerdetail
+
+        name: main
+        selector: main
+
+        name: cardCt
+        selector: #cardCt
+
+        add a controller action with the following configs:
+            target type: Breadcrumbs
+            name: breadcrumbactivate (custom event fired)
+            controlQuery: "breadcrumbs"
+            set the code to: 
+                this.getCardCt().getLayout().setActiveItem(index);
+
+        add a controller action with the following configs:
+            target type: Customers
+            name: customerselect (custom)
+            controlQuery: "customers"
+            fn: onCustomerSelect
+            params: customer, eventOptions
+
+            set the code to:
+                var detailCard = this.getCustomerDetail();
+                detailCard.setCustomer(customer);
+                detailCard.ownerCt.getLayout().setActiveItem(detailCard);
+
+                var args = {
+                    params: {
+                        customerId: customer.getId()
+                    }
+                };
+                this.getOrdersStore().load(args);
+
+                    add action
+                    targetType: Ext.Component
+                    name: activate
+                    controlQuery: main > #cardCt > component
+                    fn: onCardSwitch
+                    code:
+
+                this.getMain().updateBreadcrumbs();
